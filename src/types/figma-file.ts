@@ -14,4 +14,6 @@ export type CanvasNodes = Array<CanvasNode>;
 export type FrameNode = FileChildrenNode<Frame>;
 export type FrameNodes = Array<FileChildrenNode<Frame>>;
 
-export type ExportableEntity = NodeWithShortcuts<Component & ComponentMetadata> | NodeWithShortcuts<Instance>
+export type ExportableEntity =
+  | NodeWithShortcuts<Component & ComponentMetadata>
+  | NodeWithShortcuts<Instance>;
