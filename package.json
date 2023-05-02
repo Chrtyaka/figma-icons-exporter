@@ -40,6 +40,6 @@
     "figma-js": "1.x",
     "figma-transformer": "2.x",
     "node-fetch": "3.x",
-    "svgo": "4.x"
+    "svgo": "3.x"
   }
 }
