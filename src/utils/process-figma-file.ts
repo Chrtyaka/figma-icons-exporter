@@ -4,9 +4,7 @@ import { CanvasNode, FindCanvasFilter, FindFrameFilter, FrameNode } from '../typ
 export function findCanvas(file: ProcessedFile, filter: FindCanvasFilter): CanvasNode | undefined {
   const children = file.shortcuts.pages;
 
-  if (typeof filter === 'string') {
-    return children.find(item => item.name === filter);
-  }
+  return children.find(item => item.name === filter);
 }
 
 export function findFrameInCanvas(
