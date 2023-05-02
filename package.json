@@ -7,7 +7,7 @@
     "lint:fix": "eslint ./src --fix",
     "type-check": "tsc --noEmit",
     "prettier": "prettier --write --ignore-unknown",
-    "build": "rollup -c"
+    "build": "ncc build src/index.ts -o dist"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,6 +20,7 @@
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
+    "@vercel/ncc": "^0.36.1",
     "eslint": "^8.33.0",
     "lefthook": "^1.3.7",
     "prettier": "^2.8.3",
