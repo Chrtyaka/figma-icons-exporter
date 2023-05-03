@@ -11,9 +11,11 @@ export function findFrameInCanvas(
   canvas: CanvasNode | ProcessedFile,
   filter: FindFrameFilter,
 ): FrameNode | undefined {
+  console.log('Find frame in canvas...');
   const children = canvas.shortcuts?.frames;
 
   if (children === undefined) {
+    console.log("Canvas don't have any children");
     return undefined;
   }
 
