@@ -11,6 +11,9 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "devDependencies": {
     "@commitlint/cli": "^17.5.0",
