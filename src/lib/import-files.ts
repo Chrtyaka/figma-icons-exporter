@@ -45,11 +45,19 @@ export async function importFiles(
 
   const frame = config.frame ? findFrameInCanvas(canvas, config.frame) : canvas;
 
-  if (!frame?.shortcuts) {
+  if (!frame) {
     return { items: [], lastModified };
   }
 
-  const entities = frame.shortcuts[entityForExport];
+  const { shortcuts } = frame;
+
+  if (!shortcuts) {
+    return { items: [], lastModified };
+  }
+
+  const entities = Array.isArray(entityForExport)
+    ? entityForExport.map(item => shortcuts[item]).flat()
+    : shortcuts[entityForExport];
 
   const entityIds = entities.map(item => item.id);
   const batchCount = Math.ceil(entityIds.length / batchSize);

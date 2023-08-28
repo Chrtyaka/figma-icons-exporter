@@ -1,7 +1,7 @@
 import * as Figma from 'figma-js';
 import path from 'path';
 import { ExporterConfig } from './types/config';
-import { createComponents } from './lib/create-components';
+// import { createComponents } from './lib/create-components';
 import { downloadFiles } from './lib/download-files';
 import { importFiles } from './lib/import-files';
 import { processFiles } from './lib/process-files';
@@ -20,7 +20,7 @@ export async function exportFiles(token: string, config: ExporterConfig) {
 
   await processFiles(outputDir);
 
-  await createComponents(outputDir, 'vue');
+  // await createComponents(outputDir, 'vue');
 
   await generateFileNamesUnionType('SvgIcons', outputDir);
 
