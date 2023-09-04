@@ -7,16 +7,18 @@ import { FetchedFile, SavedFile } from '../types/files';
 
 const download = async (items: SvgItem[]): Promise<FetchedFile[]> => {
   return Promise.all(
-    items.map(async (data): Promise<FetchedFile> => {
-      const downloadedSvg = await fetch(data.url);
+    items
+      .filter(item => Boolean(item.url))
+      .map(async (data): Promise<FetchedFile> => {
+        const downloadedSvg = await fetch(data.url);
 
-      const body = await downloadedSvg.text();
+        const body = await downloadedSvg.text();
 
-      return {
-        data: body,
-        name: data.name,
-      };
-    }),
+        return {
+          data: body,
+          name: data.name,
+        };
+      }),
   );
 };
 
